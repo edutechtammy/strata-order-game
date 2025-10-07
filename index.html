@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Strata Order Game (Rebuild)</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#piecesContainer">Skip to interactive</a>
+  <main class="container">
+    <header>
+      <h1>Strata Order Game</h1>
+      <div id="instructions" class="instructions">
+      <p>Show that you know the order of the seven most important index fossils. Select fossils under "Drag" and drop them in the "Drop" zones, youngest to oldest. Then check your answer.</p>
+      <button id="keyboardNavBtn" class="keyboard-nav-btn" aria-describedby="instructions">Keyboard Navigation</button>
+      </div>
+    </header>
+
+    <!-- Drag Objects Section-->
+    <section class="game">
+
+<!-- Reference Section (visible legend) -->
+  <figure id="reference">
+        <figcaption class="ref-caption">Need a Little Help?</figcaption>
+        <div class="ref-help">
+        <p>If you don't have the index fossil order memorized, you can use the sample strata columns below and a little logic to figure out the order. Hint: Fossils from some eras get worn away before new layers are deposited. This is why there is no place in the world with a complete sequence of fossils.</p>
+        </div>
+        <div class="ref-images">
+          <div class="ref-item">
+            <img src="assets/strataColumn1.png" alt="Alt Text Column 1 Placeholder" class="ref-img ref-img-1">
+            <div class="ref-label">Column 1</div>
+          </div>
+          <div class="ref-item">
+            <img src="assets/strataColumn2.png" alt="Alt text placeholder for column 2" class="ref-img ref-img-2">
+            <div class="ref-label">Column 2</div>
+          </div>
+          <div class="ref-item">
+            <img src="assets/strataColumn3.png" alt="Alt text placeholder for column 3" class="ref-img ref-img-3">
+            <div class="ref-label">Column 3</div>
+          </div>
+        </div>
+        <p></p>
+        <p>Temporary Dev Notes: Calcerous nannoplankton, Foraminifera, Belomnite, Ammonite, Graptolite, Trilobite, Brachiopod</p>
+      </figure>
+      <p></p>
+
+  <div class="main-columns">
+  <aside class="pieces">
+        <h2>Drag</h2>
+  <div id="piecesContainer" class="pieces-grid" aria-label="Fossils" role="list" aria-describedby="instructions" tabindex="-1"></div>
+      
+        <div class="controls">
+          <button id="undoBtn" disabled>Undo</button>
+          <button id="redoBtn" disabled>Redo</button>
+          <button id="checkBtn">Check</button>
+          <button id="resetBtn">Reset</button>
+        </div>
+  <div id="message" role="status" aria-live="polite" aria-atomic="true" class="message"></div>
+  </aside>
+
+  <!-- Drop Objects Section-->
+  <div class="strata" role="region" aria-label="Drop targets: strata layers">
+    <h2>Drop</h2>
+        <div class="stratum" data-index="0" tabindex="0" aria-labelledby="stratum-label-0">
+          <span class="label">Youngest Layer</span>
+          <span id="stratum-label-0" class="sr-only">Stratum 0: Youngest Layer</span>
+        </div>
+        <div class="stratum" data-index="1" tabindex="0" aria-labelledby="stratum-label-1">
+          <span class="label"> </span>
+          <span id="stratum-label-1" class="sr-only">Stratum 1</span>
+        </div>
+        <div class="stratum" data-index="2" tabindex="0" aria-labelledby="stratum-label-2">
+          <span class="label"> </span>
+          <span id="stratum-label-2" class="sr-only">Stratum 2</span>
+        </div>
+        <div class="stratum" data-index="3" tabindex="0" aria-labelledby="stratum-label-3">
+          <span class="label"> </span>
+          <span id="stratum-label-3" class="sr-only">Stratum 3</span>
+        </div>
+        <div class="stratum" data-index="4" tabindex="0" aria-labelledby="stratum-label-4">
+          <span class="label"> </span>
+          <span id="stratum-label-4" class="sr-only">Stratum 4</span>
+        </div>
+        <div class="stratum" data-index="5" tabindex="0" aria-labelledby="stratum-label-5">
+          <span class="label"> </span>
+          <span id="stratum-label-5" class="sr-only">Stratum 5</span>
+        </div>
+        <div class="stratum" data-index="6" tabindex="0" aria-labelledby="stratum-label-6">
+          <span class="label">Oldest Layer</span>
+          <span id="stratum-label-6" class="sr-only">Stratum 6: Oldest Layer</span>
+        </div>
+      </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Keyboard Navigation Modal -->
+  <div id="keyboardModal" class="modal" role="dialog" aria-labelledby="modalTitle" aria-describedby="modalContent" aria-hidden="true">
+    <div class="modal-overlay" aria-hidden="true"></div>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 id="modalTitle">Keyboard Navigation</h2>
+        <button class="modal-close" aria-label="Close keyboard navigation help">×</button>
+      </div>
+      <div id="modalContent" class="modal-body">
+        <h3>Game Controls</h3>
+        <ul>
+          <li><strong>Tab / Shift+Tab:</strong> Navigate between fossils, strata layers, and buttons</li>
+          <li><strong>Enter / Space:</strong> Select a fossil or activate a button</li>
+          <li><strong>Arrow Keys:</strong> Navigate between strata layers when focused</li>
+        </ul>
+        
+        <h3>Fossil Movement</h3>
+        <ul>
+          <li><strong>1. Select a fossil:</strong> Tab to a fossil and press Enter or Space</li>
+          <li><strong>2. Choose destination:</strong> Tab to a strata layer and press Enter or Space to place</li>
+          <li><strong>3. Deselect:</strong> Press Enter or Space on the same fossil again</li>
+        </ul>
+        
+        <h3>Button Controls</h3>
+        <ul>
+          <li><strong>Check:</strong> Verify your fossil arrangement</li>
+          <li><strong>Reset:</strong> Clear all placements and start over</li>
+          <li><strong>Undo:</strong> Reverse the last action</li>
+          <li><strong>Redo:</strong> Restore a previously undone action</li>
+        </ul>
+        
+        <h3>Screen Reader Tips</h3>
+        <ul>
+          <li>Each fossil and strata layer has descriptive labels</li>
+          <li>Status messages announce your actions</li>
+          <li>Use the skip link to jump directly to the interactive area</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button class="modal-close-btn">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Ensure skip link moves keyboard focus into the interactive area on click.
+    (function () {
+      var skip = document.querySelector('.skip-link');
+      if (!skip) return;
+      skip.addEventListener('click', function (e) {
+        var href = this.getAttribute('href');
+        if (!href || href.charAt(0) !== '#') return;
+        var id = href.slice(1);
+        var target = document.getElementById(id);
+        if (!target) return;
+        e.preventDefault();
+        // Ensure it's focusable
+        if (!target.hasAttribute('tabindex')) target.setAttribute('tabindex', '-1');
+        try {
+          target.focus({ preventScroll: true });
+        } catch (err) {
+          // Fallback for older browsers
+          target.focus();
+        }
+      }, false);
+    })();
+  </script>
+  <script src="app.js"></script>
+</body>
+</html>
