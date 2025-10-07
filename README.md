@@ -94,3 +94,24 @@ This activity supports learning objectives in:
 - Scoring and progress tracking for classroom management
 - Audio descriptions for enhanced accessibility
 - Multi-language support for diverse learners
+
+## 🤝 Contributing & Feedback
+
+We welcome feedback from educators, students, geologists, and developers! 
+
+### 📢 Ways to Get Involved
+- **🎓 Educational Suggestions**: Use our [Educational Improvement template](../../issues/new?template=educational-improvement.md)
+- **🐛 Report Issues**: Found a bug? Use our [Bug Report template](../../issues/new?template=bug-report.md)  
+- **🦕 Content Updates**: Need different fossils? Use our [Fossil Content template](../../issues/new?template=fossil-content-request.md)
+- **💬 General Discussion**: Join conversations in [Discussions](../../discussions)
+
+### 🎯 We're Especially Looking For
+- Feedback from geology educators and students
+- Accessibility testing and improvements
+- Suggestions for curriculum alignment
+- High-quality fossil images and geological accuracy reviews
+
+See our [Contributing Guidelines](CONTRIBUTING.md) for more details on how to get involved!
+
+## 📧 Contact
+**Tammy Moore** - teacher.tammy.moore@gmail.com
