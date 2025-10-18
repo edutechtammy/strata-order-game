@@ -540,8 +540,17 @@ document.getElementById('checkBtn').addEventListener('click', () => {
   else { message.textContent = 'Not quite — try rearranging and check again.'; }
 });
 
-// initial render
-renderPieces(pieces);
+// initial render - shuffle pieces so they're not in correct order
+const shuffledPieces = [
+  pieces[4], // p5 (Fossil E)
+  pieces[1], // p2 (Fossil B) 
+  pieces[6], // p7 (Fossil G)
+  pieces[0], // p1 (Fossil A)
+  pieces[3], // p4 (Fossil D)
+  pieces[5], // p6 (Fossil F)
+  pieces[2]  // p3 (Fossil C)
+];
+renderPieces(shuffledPieces);
 // initialize history with empty placements (pool only)
 pushHistory();
 
