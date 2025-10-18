@@ -1,8 +1,5 @@
 # Strata Order Game
 
-## Current Status
-**Note**: Fossil images are currently placeholders pending stakeholder approval of final paleontological specimens. The game mechanics, accessibility features, and educational framework are complete and fully functional.
-
 ## Educational Purpose
 
 This interactive educational activity helps students understand how **index fossils** are used to establish the chronological order and relative age of geological strata layers. Students practice the fundamental geological principle that fossil sequences can reveal the temporal relationships between rock formations.
@@ -17,7 +14,9 @@ Students will:
 
 ### How It Works
 
-Students drag and drop seven important index fossils into the correct chronological order, from youngest (top) to oldest (bottom). The game provides reference strata columns showing partial fossil sequences that students must analyze to determine the complete temporal order. This mirrors real-world geological fieldwork where scientists piece together evidence from multiple incomplete fossil records.
+Students drag and drop seven index fossils into the correct chronological order, from youngest (top) to oldest (bottom). The game provides reference strata columns showing partial fossil sequences that students must analyze to determine the complete temporal order. 
+
+**Key Educational Approach**: Rather than requiring memorization of specific fossil names, this game teaches the **logical reasoning process** that geologists use to construct geological time sequences. Students learn how scientists piece together evidence from multiple incomplete fossil records to understand Earth's history - a critical skill that mirrors real-world geological fieldwork.
 
 ## Technical Implementation
 
@@ -68,7 +67,7 @@ The **graphics-source/** folder contains the original design files for easy upda
 - **Exported reference images** for backup and comparison
 - **Original graphics** at full resolution before web optimization
 
-When updating fossil images or strata diagrams:
+When updating graphics or visual elements:
 1. Edit the `.psd` file in the `graphics-source/` folder
 2. Export updated images to the `assets/` folder
 3. Maintain consistent file naming and dimensions for seamless integration
