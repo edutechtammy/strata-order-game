@@ -7,7 +7,7 @@
   --piece-width: 118px;
   --column-gap: 8px;
   /* reference image sizing: min, preferred, max */
-  --ref-min: 80px;
+  --ref-min: 150px;
   /* preferred can grow with viewport but is capped by --ref-max */
   --ref-preferred: clamp(var(--ref-min), 9vw, var(--ref-max));
   --ref-max: 200px;
@@ -52,8 +52,8 @@ body {
 
 .container {
   max-width: 1100px;
-  margin: 24px auto;
-  padding: 16px
+  margin: 14px auto;
+  padding: 10px
 }
 
 header h1 {
@@ -237,7 +237,7 @@ header h1 {
 /* Make the paragraph(s) directly under the reference caption match the page text color */
 #reference>p {
   color: inherit;
-  margin: 5px 5px 5px;
+  margin: 5px;
   max-width: 820px;
   text-align: center;
 }
